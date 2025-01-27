@@ -1,0 +1,33 @@
+{
+    "projects": [
+        {
+            "title": "Project 1",
+            "description": "it's so good",
+            "img": "img/project_1.png",
+            "alt": "some alt text",
+            "url": "https://github.com/wowie",
+            "skillset": ["CSS, JS, HTML, SQL"]
+        },
+        {
+            "title": "Project 2",
+            "description": "it's expectional",
+            "img": "img/project_2.png",
+            "url": "https://github.com/zowie",
+            "skillset": ["CSS, JS, HTML, NODE.JS"]
+        },
+        {
+            "title": "Project 3",
+            "description": "it's knawrly",
+            "img": "img/project_3.png",
+            "url": "https://github.com/kapowie",
+            "skillset": ["CSS, JS, HTML, TAILWIND"]
+        }
+        {
+            "title": "Project 4",
+            "description": "it's so awesome",
+            "img": "img/project_4.png",
+            "url": "https://github.com/kapowie",
+            "skillset": ["CSS, JS, HTML"]
+        }
+    ]
+}
