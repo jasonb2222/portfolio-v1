@@ -6,6 +6,7 @@
             "img": "img/project_1.png",
             "alt": "some alt text",
             "url": "https://github.com/wowie",
+            "github":"https://github.com/jasonb2222",
             "skillset": ["CSS, JS, HTML, SQL"]
         },
         {
@@ -13,6 +14,7 @@
             "description": "it's expectional",
             "img": "img/project_2.png",
             "url": "https://github.com/zowie",
+            "github":"https://github.com/jasonb2222",
             "skillset": ["CSS, JS, HTML, NODE.JS"]
         },
         {
@@ -20,6 +22,7 @@
             "description": "it's knawrly",
             "img": "img/project_3.png",
             "url": "https://github.com/kapowie",
+            "github":"https://github.com/jasonb2222",
             "skillset": ["CSS, JS, HTML, TAILWIND"]
         },
         {
@@ -27,6 +30,7 @@
             "description": "it's so awesome",
             "img": "img/project_4.png",
             "url": "https://github.com/kapowie",
+            "github":"https://github.com/jasonb2222",
             "skillset": ["CSS, JS, HTML"]
         }
     ]
