@@ -1,15 +1,20 @@
 "use strict";
+
 document.addEventListener("DOMContentLoaded", () => {
-    const projects = document.querySelector('#projects .grid'); // Select the grid container
+    const projects = document.querySelector('#projects .grid');
+    const toggleButton = document.getElementById('showhideWF');  // Toggle button
+    const mainElement = document.querySelector('main');          // Main content
+    const svgContainer = document.getElementById('svgContainer');  // SVG container
+    const projectsSection = document.getElementById('projects');  // Projects section
+    const contactSection = document.getElementById('contact');    // Contact section
 
     // Clear any existing cards (if any)
     projects.innerHTML = '';
 
     // Fetch the project data from your JSON file
-    fetch("./data.json") // Assuming your data is in data.json or what ever name refrenced 
+    fetch("./data.json")
         .then(response => response.json())
         .then(data => {
-            // Generate the HTML for each project and append it to the container
             const cardsHtml = data.projects.map((project, index) => {
                 return `
                     <div 
@@ -21,18 +26,44 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="flex items-center justify-between">
                             <p class="text-base overflow-hidden text-ellipsis" style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">
                             ${project.desc}</p>
-                            <a onclick="closePopoutOnOutsideClick(event) target="_blank" class="bg-pink-500 text-white py-2 px-4 rounded-md font-bold hover:bg-blue-700">more</a>
+                            <a onclick="closePopoutOnOutsideClick(event)" target="_blank" class="bg-pink-500 text-white py-2 px-4 rounded-md font-bold hover:bg-blue-700">more</a>
                             </div>
                         </div>
                     </div>
                 `;
-            }).join(''); // Join the array into a single string
+            }).join('');
 
-            // Inject the generated HTML into the container
             projects.innerHTML = cardsHtml;
-
-            // Store project data globally for popout usage
             window.projectData = data.projects;
+
+            // Setup the toggle button event
+            toggleButton.addEventListener('click', () => {
+                const isHidden = mainElement.classList.contains('hidden');
+
+                if (!isHidden) {
+                    console.log('Hiding all main content');
+                    mainElement.classList.add('hidden');
+                    projectsSection.classList.add('hidden');
+                    contactSection.classList.add('hidden');
+
+                    // Load the SVG if not already loaded
+                    if (!svgContainer.querySelector("object")) {
+                        const object = document.createElement("object");
+                        object.type = "image/svg+xml";
+                        object.data = './img/wf.svg';
+                        object.classList.add("pt-28", "bg-[#111111]", "w-full", "h-full");
+                        svgContainer.appendChild(object);
+                    }
+
+                    svgContainer.style.display = "block";  // Show SVG
+                } else {
+                    console.log('Restoring all main content');
+                    mainElement.classList.remove('hidden');
+                    projectsSection.classList.remove('hidden');
+                    contactSection.classList.remove('hidden');
+                    svgContainer.style.display = "none";  // Hide SVG
+                }
+            });
         })
         .catch(error => console.log('Error fetching data:', error));
 });
@@ -45,7 +76,7 @@ function openPopout(index) {
     // Get the selected project data
     const project = window.projectData[index];
 
-    // Inject the project details into the popout
+    // Inject project details into the popout
     popoutContent.innerHTML = `
         <img src="${project.img}" alt="${project.alt}" class="w-full h-64 object-cover rounded-lg mb-4">
         <h2 class="text-2xl mb-4 font-extrabold">${project.title}</h2>
@@ -59,7 +90,6 @@ function openPopout(index) {
         </div>
     `;
 
-    // Show the popout
     popout.classList.remove('hidden');
 }
 
@@ -75,39 +105,14 @@ function closePopoutOnOutsideClick(event) {
     if (event.target === popout) {
         closePopout();
     }
-} 
-  
+}
+
 // Function to toggle the mobile menu
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu.style.display === 'none' || !mobileMenu.style.display) {
-        mobileMenu.style.display = 'block'; // Show menu
+        mobileMenu.style.display = 'block';  // Show menu
     } else {
-        mobileMenu.style.display = 'none'; // Hide menu
-    }
-}
-
-const toggleButton = document.getElementById('toggleWireframe');
-
-toggleButton.addEventListener('click', () => {
-
-document.body.classList.toggle('wireframe-view'); // Add or remove the 'wireframe-view' class based on current state
-
-});
-
-function showhide(id, svg) {
-    var element = document.getElementById(id);
-    if (element.style.display == "none") {
-         // Check if SVG object already loaded; if not, load it now
-         if (!element.getElementsByTagName("object").length) {
-             var object = document.createElement("object");
-             object.type = "image/svg+xml";
-             object.data = svg;
-             element.appendChild(object);
-        }
-        element.style.display = "block";
-    }
-    else {
-        element.style.display = "none";
+        mobileMenu.style.display = 'none';  // Hide menu
     }
 }
