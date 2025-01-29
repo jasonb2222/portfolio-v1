@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="flex items-center justify-between">
                             <p class="text-base overflow-hidden text-ellipsis" style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">
                             ${project.desc}</p>
-                            <a onclick="closePopoutOnOutsideClick(event) target="_blank" class="bg-pink-500 text-white py-2 px-4 rounded-md hover:bg-blue-700">more</a>
+                            <a onclick="closePopoutOnOutsideClick(event) target="_blank" class="bg-pink-500 text-white py-2 px-4 rounded-md font-bold hover:bg-blue-700">more</a>
                             </div>
                         </div>
                     </div>
@@ -48,13 +48,13 @@ function openPopout(index) {
     // Inject the project details into the popout
     popoutContent.innerHTML = `
         <img src="${project.img}" alt="${project.alt}" class="w-full h-64 object-cover rounded-lg mb-4">
-        <h2 class="text-2xl font-bold mb-4">${project.title}</h2>
+        <h2 class="text-2xl mb-4 font-extrabold">${project.title}</h2>
         <p class="text-lg mb-4">${project.desc}</p>
-        <div class="flex gap-5 items-center">
-            <a href="${project.url}" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Live Site</a>
-            <a href="${project.github}" target="_blank" class="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">GitHub</a>
+        <div class="flex gap-5 items-center font-bold">
+            <a href="${project.url}" target="_blank" class="flex bg-blue-600 text-white py-2 px-4 gap-3 pt-2 text-center rounded-md hover:bg-blue-700"><image src="./img/www.png">Live Site</a>
+            <a href="${project.github}" target="_blank" class="flex bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900"><image src="./img/githubicon.png"></a>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 font-extrabold">
             <strong>Skills:</strong> ${project.skillset.join(', ')}
         </div>
     `;
@@ -75,9 +75,7 @@ function closePopoutOnOutsideClick(event) {
     if (event.target === popout) {
         closePopout();
     }
-}
-
-  
+} 
   
 // Function to toggle the mobile menu
 function toggleMenu() {
@@ -86,5 +84,30 @@ function toggleMenu() {
         mobileMenu.style.display = 'block'; // Show menu
     } else {
         mobileMenu.style.display = 'none'; // Hide menu
+    }
+}
+
+const toggleButton = document.getElementById('toggleWireframe');
+
+toggleButton.addEventListener('click', () => {
+
+document.body.classList.toggle('wireframe-view'); // Add or remove the 'wireframe-view' class based on current state
+
+});
+
+function showhide(id, svg) {
+    var element = document.getElementById(id);
+    if (element.style.display == "none") {
+         // Check if SVG object already loaded; if not, load it now
+         if (!element.getElementsByTagName("object").length) {
+             var object = document.createElement("object");
+             object.type = "image/svg+xml";
+             object.data = svg;
+             element.appendChild(object);
+        }
+        element.style.display = "block";
+    }
+    else {
+        element.style.display = "none";
     }
 }

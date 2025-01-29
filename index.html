@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +9,29 @@
     <script src="./script.js" defer></script>
 </head>
 <body class="overflow-x-hidden">
+    <div id="showWF" style="display: none;"></div>
     <a id="backtotop"></a>
     <div class="bg-[url(./img/lines-bg.png)]">
-        <nav class="fixed top-4 left-10 right-10 px-5 pb-5 rounded-[1.5vw] bg-[#09132c] border-2 z-10 lg:px-10 lg:pb-5">
+        <nav class="fixed top-4 left-10 right-10 px-5 pb-2 font-bold rounded-[1.5vw] bg-[#09132c] border-2 z-10 lg:px-10 lg:pb-5">
             <div class="flex justify-between items-center">
                 <!-- Hamburger icon for mobile -->
                 <div class="lg:hidden block text-white text-4xl cursor-pointer" id="menu-icon" onclick="toggleMenu()">
                     &#9776; <!-- Hamburger icon -->
+                    <a class=" px-10 py-3 text-4xl align-middle hover:animate-pulse">MENU</a>
                 </div>
         
                 <!-- Navigation Links -->
                 <div class="hidden lg:flex items-center justify-end gap-10 pt-4 px-10 w-full" id="nav-links">
                     <a href="#" class="xl:px-80 lg:px-80 md:px-40 py-2 text-5xl text-white">Portfolio</a>
-                    <a href="#backtotop" class="bg-white px-12 py-3 rounded-[0.5vw] text-lg hover:animate-pulse">Home</a>
+                    <a href="#" class="bg-white px-12 py-3 rounded-[0.5vw] text-lg hover:animate-pulse">Home</a>
                     <a href="#projects-link" class="bg-white px-12 py-3 rounded-[0.5vw] text-lg hover:animate-pulse">Portfolio</a>
                     <a href="#contact" class="bg-white px-12 py-3 rounded-[0.5vw] text-lg hover:animate-pulse">Contact</a>
                     <a href="https://www.figma.com/design/vNQE148OAT8Ii0baUC2h88/CV-Jason-2023" class="bg-white px-6 py-3 rounded-[0.5vw] text-lg hover:animate-pulse">CV</a>
+                    <a href="#" onclick="showhide('showWF', './img/wf.svg');" class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" value="" class="sr-only peer">
+                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle Wireframe</span>
+                    </a>
                 </div>
         
                 <!-- Mobile Menu (Initially Hidden) -->
@@ -35,10 +42,11 @@
                     </div>
         
                     <div class="flex flex-col items-center space-y-6 mt-10">
-                        <a href="#backtotop" class="bg-white px-24 py-3 rounded-[0.5vw] text-lg hover:animate-pulse" onclick="toggleMenu()">Home</a>
-                        <a href="#projects-link" class="bg-white px-20 py-3 rounded-[0.5vw] text-lg hover:animate-pulse" onclick="toggleMenu()">Portfolio</a>
-                        <a href="#contact" class="bg-white px-20 py-3 rounded-[0.5vw] text-lg hover:animate-pulse" onclick="toggleMenu()">Contact</a>
-                        <a href="https://www.figma.com/design/vNQE148OAT8Ii0baUC2h88/CV-Jason-2023" class="bg-white px-24 py-3 rounded-[0.5vw] text-lg hover:animate-pulse" onclick="toggleMenu()">CV</a>
+                        <a onclick="toggleMenu()" class="xl:px-80 lg:px-80 md:px-40 py-2 text-3xl text-white">MENU</a>
+                        <a href="#backtotop" class="bg-white px-24 py-3 rounded-[0.5vw] text-2xl hover:animate-pulse" onclick="toggleMenu()">Home</a>
+                        <a href="#projects-link" class="bg-white px-20 py-3 rounded-[0.5vw] text-2xl hover:animate-pulse" onclick="toggleMenu()">Portfolio</a>
+                        <a href="#contact" class="bg-white px-20 py-3 rounded-[0.5vw] text-2xl hover:animate-pulse" onclick="toggleMenu()">Contact</a>
+                        <a href="https://www.figma.com/design/vNQE148OAT8Ii0baUC2h88/CV-Jason-2023" class="bg-white px-28 py-3 rounded-[0.5vw] text-2xl hover:animate-pulse" onclick="toggleMenu()">CV</a>
                     </div>
                 </div>
             </div>
@@ -54,9 +62,9 @@
                 <h1 class="text-left text-xl pb-3">Full-Stack Developer</h1>
                 <p class="text-left text-5xl pb-6">Hey there, <br> I'm Jason Banks 👋</p>
                 <p class="text-left text-lg bg-[#09132c]">Delivering innovative solutions to build, collaborate & establish an online presence both through platforms, web and social media to reach a wider audience for growth. This included application implementation, wireless networks management, website creation, administration, video creation, design, social media / ad strategy, buildout of new technology / solutions, managing events & systems, VOD platforms and subscription services, and oversee all general technology.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 justify-center text-center px-1 py-4 gap-5">
-                    <a href="https://github.com/jasonb2222" class="text-xl rounded-[0.5vw] bg-blue-600 py-2 px-8 text-white hover:animate-pulse">Github</a>
-                    <a href="www.linkedin.com/in/j-banks" class="text-xl rounded-[0.5vw] bg-blue-600 py-2 px-8 text-white hover:animate-pulse">Connect</a>
+                <div class="grid grid-cols-1 md:grid-cols-2 font-medium justify-center text-center px-1 py-4 gap-5">
+                    <a class="flex justify-center text-xl rounded-[0.5vw] bg-blue-600 py-2 px-4 gap-3 text-white hover:animate-pulse"href="https://github.com/jasonb2222"><image src="./img/githubicon.png">Github</a>
+                    <a class="flex justify-center text-xl rounded-[0.5vw] bg-blue-600 py-2 px-4 gap-3 text-white hover:animate-pulse"href="www.linkedin.com/in/j-banks"><image src="./img/linkedinicon.png">Linkedin</a>
                 </div>
             </div>
         
@@ -134,15 +142,13 @@
         <!-- Navigation Links -->
         <div class="flex justify-center bg-[#09132c] pb-5 px-8 items-center">
             <div class="flex rounded-[3vw] bg-[#09132c] border-2 sm:w-auto overflow-x-auto order-last">
-                <div class="flex flex-row sm:w-auto px-3 py-1 text-white whitespace-nowrap text-xs sm:text-sm justify-center items-center text-center">
+                <div class="flex flex-row font-bold sm:w-auto px-3 py-1 text-white whitespace-nowrap text-xs sm:text-sm justify-center items-center text-center">
                     <a href="#projects-link" class="px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse">Portfolio</a>
                     <a href="#contact" class="px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse">Contact</a>
                     <a href="https://www.figma.com/design/vNQE148OAT8Ii0baUC2h88/CV-Jason-2023" 
                        class="px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse">CV</a>
-                    <a href="www.linkedin.com/in/j-banks" 
-                       class="px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse">LinkedIn</a>
-                    <a href="https://github.com/jasonb2222" 
-                       class="px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse">Github</a>
+                    <a href="www.linkedin.com/in/j-banks"><image src="./img/linkedinicon.png" class="rounded-full px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse"></image>
+                    <a href="https://github.com/jasonb2222"><image src="./img/githubicon.png" class="rounded-full px-2 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm hover:animate-pulse">
                 </div>
             </div>
         </div>            
@@ -151,7 +157,7 @@
         <div class="flex justify-end bg-[#09132c] px-8 pb-5 items-center order-first">
             <div class="flex rounded-full bg-[#09132c] border-2">
                 <div class="px-2 py-2 text-white text-center">
-                    <a href="#backtotop" class="px-2 py-2 text-sm hover:animate-pulse">↑</a>
+                    <a href="#" class="px-2 py-2 text-sm hover:animate-pulse">↑</a>
                 </div>
             </div>
         </div>
