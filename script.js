@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     const projects = document.querySelector('#projects .grid'); // Select the grid container
 
@@ -5,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projects.innerHTML = '';
 
     // Fetch the project data from your JSON file
-    fetch("./data.json") // Assuming your data is in data.json
+    fetch("./data.json") // Assuming your data is in data.json or what ever name refrenced 
         .then(response => response.json())
         .then(data => {
             // Generate the HTML for each project and append it to the container
