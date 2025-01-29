@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="style.css"></script>
-    <script src="script.js" defer></script>
+    <script src="./style.css"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body class="overflow-x-hidden">
     <a id="backtotop"></a>
-    <div class="bg-[url(/img/lines-bg.png)]">
+    <div class="bg-[url(./img/lines-bg.png)]">
         <nav class="fixed top-4 left-10 right-10 px-5 pb-5 rounded-[1.5vw] bg-[#09132c] border-2 z-10 lg:px-10 lg:pb-5">
             <div class="flex justify-between items-center">
                 <!-- Hamburger icon for mobile -->
@@ -47,18 +47,22 @@
           
 
     <main>
-        <div id="portfolio" class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 items-center justify-center sm:h-screen py-40 xl:px-20 lg:px-20 sm:px-2 gap-40">
-            <div id="portfolio-top" class="s:h-screen text-white text-wrap px-10">
+        <!--Page Heading Section -->
+        <div id="portfolio" class="grid grid-cols-1 lg:grid-cols-2 items-center sm:h-screen py-40 xl:px-20 lg:px-20 sm:px-2 gap-10">
+            <!-- Text Content -->
+            <div id="portfolio-top" class="text-white px-10 order-last lg:order-first">
                 <h1 class="text-left text-xl pb-3">Full-Stack Developer</h1>
                 <p class="text-left text-5xl pb-6">Hey there, <br> I'm Jason Banks 👋</p>
-                <p class="text-left text-lg bg-[#09132c]">Delivering innovative solutions to build, collaborate & establish an online presence both through platforms, web and social media to reach a wider audience for growth. This included application implementation, wireless networks management, website creation, administration, video creation, design, social media / ad strategy,  buildout of new technology / solutions, managing events & systems, VOD platforms and subscription services, and oversee all general technology.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 justify-center text-center px-1 py-4 gap-5">
+                <p class="text-left text-lg bg-[#09132c]">Delivering innovative solutions to build, collaborate & establish an online presence both through platforms, web and social media to reach a wider audience for growth. This included application implementation, wireless networks management, website creation, administration, video creation, design, social media / ad strategy, buildout of new technology / solutions, managing events & systems, VOD platforms and subscription services, and oversee all general technology.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 justify-center text-center px-1 py-4 gap-5">
                     <a href="https://github.com/jasonb2222" class="text-xl rounded-[0.5vw] bg-blue-600 py-2 px-8 text-white hover:animate-pulse">Github</a>
                     <a href="www.linkedin.com/in/j-banks" class="text-xl rounded-[0.5vw] bg-blue-600 py-2 px-8 text-white hover:animate-pulse">Connect</a>
-                  </div>
+                </div>
             </div>
-            <div id="portfolio-img" class="justify-center w-3/4 shrink"> 
-                <img src="https://avatars.githubusercontent.com/u/58106006?s=800&u=c7afdce55e54e9aff03b3df0a8b9e0dc871c2c24&v=4" alt="Placeholder Image" class="w-full h-auto object-cover rounded-[4vw] border-gray-50">
+        
+            <!-- Image Content -->
+            <div id="portfolio-img" class="flex justify-center items-center w-full order-first lg:order-last">
+                <img src="https://avatars.githubusercontent.com/u/58106006?s=800&u=c7afdce55e54e9aff03b3df0a8b9e0dc871c2c24&v=4" alt="Placeholder Image" class="w-3/4 h-auto object-cover rounded-[4vw] border-gray-50">
             </div>
         </div>
         <blockquote class="text-center text-3xl pb-32 font-semibold text-gray-900 italic dark:text-white">
@@ -73,42 +77,66 @@
     <div id="projects" class="flex flex-col bg-[#09132c]">
         <!-- Projects Heading -->
         <a id="projects-link" class="px-28 py-6 align-text-top text-5xl text-white text-left">Projects</a>
+        
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-7 pt-10 pb-60 px-20 w-full">
-            <!-- Projects will be injected here -->
+            <!-- Project cards will be injected here -->
         </div>
-    </div>    
     </div>
-        <div id= "contact" class="flex items-center justify-center bg-[#09132c]">
-                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2 pb-32 px-20">
+    
+    <!-- Pop-Out Box (Popout) -->
+    <div id="popout" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-30" onclick="closePopoutOnOutsideClick(event)">
+        <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg p-8 overflow-y-auto max-h-[90vh]" onclick="event.stopPropagation()">
+        <button class="absolute top-4 right-4 text-2xl font-bold text-black" onclick="closePopout()">×</button>
+            <div id="popout-content">
+        <!-- Dynamic content will be injected here -->
+            </div>
+    </div>
+</div> 
+    </div>
+    <!--Contact Us Section-->
+        <div id= "contact" class="flex flex-col bg-[#09132c]">
+            <a id="contact-link" class="px-28 py-6 align-text-top text-5xl text-white text-left">Contact</a>
+                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-7 pt-10 pb-60 px-20 w-full justify-self-center lg:justify-self-end">
                   <!-- Replace this with your grid items -->
-                  <a id="contact-link" class="px-28 py-6 align-text-top text-5xl text-white text-left">Contact</a>
-                  <div class="bg-white hover:bg-[url(/img/lines-bg.png)] justify-center border rounded-[0.5vw] p-4">
-                    <img src="https://placehold.co/600x400" alt="Placeholder Image" class="w-full h-48 object-cover">
+                  <div class="bg-white  border rounded-[0.5vw] p-4">
                     <div class="px-1 py-3">
-                      <div class="font-bold text-xl mb-2">Project</div>
-                      <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quae, nesciunt molestiae quia nihil vero a dicta fugiat in quibusdam nisi repudiandae ullam eos, harum rem nemo sed distinctio et.</p>
+                      <div class="font-bold text-xl mb-2 text-center">Contact Us</div>
+                      <p class=" text-gray-700 s:h-screen">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quae, nesciunt molestiae quia nihil vero a dicta fugiat in</p>
                     </div>
-                    <div class="flex justify-center px-1 py-4 gap-5">
-                      <a class="rounded-[0.5vw] bg-blue-600 py-3 px-10 text-white">Submit</a>
-                    </div>
-                  </div>
-                    </div>
-                  </div>
-
-                  <div class="container">
-                    <div class="card bg-light border-dark mb-3" style="max-width: 70rem;">
-                
-                        <div class="card-header"></div>
-                
-                        <div class="card-body">
-                
-                            <h5 class="card-title"></h5>
-                
-                            <p class="card-text"></p>
+                    <form class="block">
+                        <div class="grid gap-6 mb-6 md:grid-cols-1">
+                            <div>
+                                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+                                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
+                            </div>
+                            <div>
+                                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
+                                <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+                            </div>
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company</label>
+                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Company" required />
+                            </div>  
+                            <div>
+                                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+                                <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                            </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
+                            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex items-center h-5"> 
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </form>
+                  </div>
+                    </div>
+                  </div>
                   <!-- Add more items as needed -->
                 </div>
             </div>
