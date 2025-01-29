@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Store project data globally for popout usage
             window.projectData = data.projects;
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.log('Error fetching data:', error));
 });
 
 // Open popout with project details
