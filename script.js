@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projects.innerHTML = '';
 
     // Fetch the project data from your JSON file
-    fetch("data.json") // Assuming your data is in data.json or what ever name refrenced 
+    fetch("./data.json") // Assuming your data is in data.json or what ever name refrenced 
         .then(response => response.json())
         .then(data => {
             // Generate the HTML for each project and append it to the container
