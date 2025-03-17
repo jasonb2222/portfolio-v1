@@ -1,5 +1,5 @@
 {
-    "projects": [
+    "projects": 
         {
             "title": "Bookswap System",
             "desc": "During this project I used React to build an application based on a supplied design and utalising an existing API. The application implemented features such as pagination, search and filters, all with a crisp responsive front-end based on a provided design, it allowed me to practice working with a CSS framework while building a modern React UI that consumes an existing API.",
@@ -27,5 +27,5 @@
             "github": "https://github.com/jasonb2222",
             "skillset": ["CSS", "JS", "HTML", "TAILWIND"]
         },
-    ]
+    
 }
