@@ -1,13 +1,13 @@
 {
     "projects": [
         {
-            "title": "Project 1",
-            "desc": "it's so good  and 3rd parties use essential and non-essential cookies to provide, secure, analyze and improve our Services, and to show you rel",
-            "img": "https://picsum.photos/200",
-            "alt": "some alt text",
-            "url": "https://github.com/wowie",
+            "title": "Bookswap System",
+            "desc": "During this project I used React to build an application based on a supplied design and utalising an existing API. The application implemented features such as pagination, search and filters, all with a crisp responsive front-end based on a provided design, it allowed me to practice working with a CSS framework while building a modern React UI that consumes an existing API.",
+            "img": "hhttps://iili.io/3oEkZbt.md.jpg",
+            "alt": "Bookswap System",
+            "url": "https://2025-htmelephant-bookswap.dev.io-academy.uk/",
             "github": "https://github.com/jasonb2222",
-            "skillset": ["CSS", "JS", "HTML", "SQL"]
+            "skillset": ["CSS", "JS", "HTML", "API"]
         },
         {
             "title": "Project 2",
@@ -27,41 +27,5 @@
             "github": "https://github.com/jasonb2222",
             "skillset": ["CSS", "JS", "HTML", "TAILWIND"]
         },
-        {
-            "title": "Project 4",
-            "desc": "it's so awesome",
-            "img": "https://picsum.photos/200",
-            "alt": "some alt text",
-            "url": "https://github.com/kapowie",
-            "github": "https://github.com/jasonb2222",
-            "skillset": ["CSS", "JS", "HTML"]
-        },
-        {
-            "title": "Project 5",
-            "desc": "it's so awesome",
-            "img": "https://picsum.photos/200",
-            "alt": "some alt text",
-            "url": "https://github.com/kapowie",
-            "github": "https://github.com/jasonb2222",
-            "skillset": ["CSS", "JS", "HTML"]
-        },
-        {
-            "title": "Project 6",
-            "desc": "it's so awesome",
-            "img": "https://picsum.photos/200",
-            "alt": "some alt text",
-            "url": "https://github.com/kapowie",
-            "github": "https://github.com/jasonb2222",
-            "skillset": ["CSS", "JS", "HTML"]
-        },
-        {
-            "title": "Project 7",
-            "desc": "it's so awesome",
-            "img": "https://picsum.photos/200",
-            "alt": "some alt text",
-            "url": "https://github.com/kapowie",
-            "github": "https://github.com/jasonb2222",
-            "skillset": ["CSS", "JS", "HTML"]
-        }
     ]
 }
